@@ -1,6 +1,6 @@
 # Accenture assessment
 
-This project is for the Accenture Assessment that utilizes the [https://gitlab.com/restcountries/restcountries] API.
+This project is for the Accenture assessment that utilizes the [https://gitlab.com/restcountries/restcountries] API.
 
 ## Running the project
 ### Prerequisites
