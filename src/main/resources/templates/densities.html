@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Countries by population density</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Countries by population density</h1>
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Population</th>
+                    <th>Area (km²)</th>
+                    <th>Population Density (p/km²)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="country : ${countries}">
+                    <td th:text="${country.name.common}">Country Name</td>
+                    <td th:text="${country.population}">Population</td>
+                    <td th:text="${country.area}">Area</td>
+                    <td th:text="${country.density}">Density</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

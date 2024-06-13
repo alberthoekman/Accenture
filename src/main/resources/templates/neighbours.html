@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Countries</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-4" th:text="'Countries in ' + ${region} + ' with the most countries in a different region'"></h1>
+    <table class="table table-striped mt-4">
+        <thead>
+        <tr>
+            <th>Country Code</th>
+            <th>Name</th>
+            <th>Region</th>
+            <th>Neighbours</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="countryW : ${countries}">
+            <td th:text="${countryW.country.cca3}"></td>
+            <td th:text="${countryW.country.name.common}"></td>
+            <td th:text="${countryW.country.region}"></td>
+            <td>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Region</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="neighbour : ${countryW.neighbours}">
+                        <td th:text="${neighbour.cca3}"></td>
+                        <td th:text="${neighbour.name.common}"></td>
+                        <td th:text="${neighbour.region}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
